@@ -1,0 +1,31 @@
+<style>
+  h1 {
+    text-align:center;
+    margin:30px auto 0 auto;
+    font-size: 40px;
+    font-weight:bold;
+  }
+
+  .box {
+    width:600px;
+    border-radius:5px;
+    padding: 10px;
+    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
+    margin:20px auto auto auto;
+    display:block;
+    background-color:LightGray;
+  }
+</style>
+
+<h1> Properties </h1>
+
+<ul id='properties'>
+  <% @properties.reverse.each do |property| %>
+    <div class="box">
+      <b><%= property.user.first_name %>&nbsp;<%= property.user.last_name %></b>&nbsp;&nbsp;
+      (<%= property.format_time %>)
+      <br>
+      <%= property.description %>
+    </div>
+  <% end %>
+</ul>
