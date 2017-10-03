@@ -1,4 +1,5 @@
 class EarBnb < Sinatra::Base
+
   get '/' do
     redirect '/properties'
   end
@@ -7,6 +8,25 @@ class EarBnb < Sinatra::Base
     @properties = Property.all
     @message = session['message']
     erb :'properties/index'
+  end
+
+  # get '/properties/111' do
+  #
+  # end
+  #
+  # get 'propertyies/111/new_comment'
+  #
+  # end
+  #
+  # post 'properties/111/post_comment'
+  #   redirect 'properties/111'
+  # end
+
+  get '/property/:id' do
+    @property = Property.get(params['id'])
+    # @property.address1
+    # @comments = Comment.all(:property_id => params['id'])
+    erb(:'properties/property')
   end
 
   post '/properties' do
