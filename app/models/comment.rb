@@ -1,7 +1,7 @@
 class Comment
     include DataMapper::Resource
 
-    belongs_to :user, :property
+    belongs_to :user, :propertys
 
     comment :id,        Serial
     comment :message    Text, required: true,

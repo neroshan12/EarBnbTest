@@ -42,7 +42,7 @@ class EarBnb < Sinatra::Base
     # :address1 => params[:address1],
     # :price_per_night => params[:price],
     # :description => params[:description]
-    # )
+    # )q
     # session['message'] = params[:address1]
     # redirect to('/properties')
   end

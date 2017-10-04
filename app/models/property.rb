@@ -1,7 +1,7 @@
 class Property
   include DataMapper::Resource
 
-  #belongs_to :user
+  belongs_to :user
 
   property :id,               Serial
   property :description,      Text, required: true,
