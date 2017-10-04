@@ -1,0 +1,7 @@
+<%= @property.address1 %>
+<% @comments = Comment.all(:property_id => params['id'])
+    comments.each do |comment| %>
+<%= comment.message %>
+<%= end %>
+<a href=''></a>
+<a href = "/property/params['id']/new_comment" > Add comment </a>
