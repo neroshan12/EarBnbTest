@@ -1,4 +1,7 @@
-<form action="save_comment" method="post"> <textarea name="comments" id="comments"></textarea>
-  <input type="hidden" name="property" value="<%=@property.id%>" >
-  <input type="submit" value="Submit comment">
+<form action="/property/<%= @property_id %>/new_comment" method="post">
+  <div>
+    <textarea name="comments" id="comments"></textarea>
+  </div>
+    <input type="hidden" name="property" value="<%=@property_id%>" >
+    <input type="submit" value="Submit comment">
 </form>

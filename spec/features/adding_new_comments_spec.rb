@@ -15,7 +15,7 @@ feature 'Creating comments' do
                 post_code: 'E12 4DH'
                 price_per_night: '10'
                 bedrooms: '2'
-                image_url: 'https://i.ebayimg.com/00/s/NjgyWDEwMjQ=/z/3DMAAOSw3YNXYB3W/$_86.JPG'
+                image_url: 'https://search.savills.com/content/assets/properties/gbcwrdcnd160531/CND160531_06_gal.JPG'
                 created_at: #'(10:32 on 03/10)'
     )
   end
