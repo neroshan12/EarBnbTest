@@ -1,20 +1,20 @@
 module SessionHelpers
 
- def sign_in(last_name:, password:)
+ def sign_in(email:, password:)
    visit '/sessions/new'
-   fill_in :last_name, with: last_name
+   fill_in :email, with: email
    fill_in :password, with: password
    click_button 'Sign in'
  end
 
- def sign_up(name: 'Jack Bauer',
-             last_name: 'Jack24',
-             email: 'jbauer@ctu.com',
+ def sign_up(first_name: 'Jack',
+             last_name: 'Bauer',
+             email: 'jbauer@ctu.gov',
              password: 'damn_it!',
              password_confirmation: 'damn_it!')
    visit '/users/new'
 
-   fill_in :name,        with: name
+   fill_in :first_name,  with: first_name
    fill_in :last_name,   with: last_name
    fill_in :email,       with: email
    fill_in :password,    with: password

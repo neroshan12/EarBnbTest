@@ -1,1 +1,32 @@
-<%= @property.address1 %>
+<style>
+  h1 {
+    text-align:center;
+    margin:30px auto 0 auto;
+    font-size: 40px;
+    font-weight:bold;
+  }
+
+  .box {
+    width:600px;
+    border-radius:5px;
+    padding: 20px;
+    box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
+    margin:20px auto auto auto;
+    display:block;
+    background-color:LightGray;
+  }
+</style>
+
+<h1> <%= @property.address1 %> </h1>
+
+<div class="box">
+  Property ID: <%= @property.id %><br>
+  Owner: <%= @property.user.first_name %>&nbsp;<%= @property.user.last_name %><br>
+  Listed on: <%= @property.format_time %><br>
+  Price: From £<%= @property.price %> per night<br>
+  Bedrooms: <%= @property.bedrooms %><br>
+  Description: <%= @property.description %><br>
+
+  <img src="<%= @property.file.url %>" width="300">
+</div>
+

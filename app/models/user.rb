@@ -17,7 +17,6 @@ class User
                                   presence: "First name must not be blank"
                                 }
   property :last_name,  String, required: true,
-                                unique: true,
                                 messages: {
                                   presence: "Last name must not be blank"
                                 }

@@ -23,9 +23,15 @@
 <!-- <ul id='properties'>
   <% @properties.reverse.each do |property| %>
     <div class="box">
-      (<%= property.format_time %>)
+      <a href="property/<%= property.id %>">
+        <caption><%= property.address1 %><br></caption>
+        <%= property.bedrooms %> Bedrooms, From <%= property.price %> per night<br>
+      </a>
+
+      (<%= #property.format_time %>)
       <br>
-      <%= property.description %>
+      <%= #property.description %>
+
     </div>
   <% end %>
 </ul> -->

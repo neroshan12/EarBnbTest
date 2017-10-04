@@ -10,7 +10,13 @@ class EarBnb < Sinatra::Base
   end
 
   post '/properties' do
-    @property = current_user.propertys.new(description: params[:description],:address1 => params[:address1])
+    @property = current_user.propertys.new(description: params[:description],
+                                           address1: params[:address1],
+                                           price: params[:price],
+                                           bedrooms: params[:bedrooms],
+                                           file: params[:file]
+                                          )
+    # @property = current_user.propertys.new(description: params[:description],:address1 => params[:address1])
     if @property.save
       current_user.save
       redirect '/properties'
@@ -25,6 +31,11 @@ class EarBnb < Sinatra::Base
     # )
     # session['message'] = params[:address1]
     # redirect to('/properties')
+  end
+
+  get '/property/:id' do
+    @property = Property.get(params[:id])
+    erb :'properties/property'
   end
 
   get '/properties/new' do
