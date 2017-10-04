@@ -7,25 +7,73 @@
   }
 
   .box {
-    width:600px;
+    width:400px;
     border-radius:5px;
-    padding: 10px;
+    padding: 20px 20px 20px 50px;
     box-shadow: -5px 5px 5px rgba(8,116,171,0.7);
     margin:20px auto auto auto;
     display:block;
     background-color:LightGray;
   }
+
+  div {
+    padding:5px;
+  }
+
+  label {
+    display:block;
+  }
+
+  textarea {
+    min-height:100px;
+    resize: none;
+  }
+
+  input, select, textarea {
+    min-width:280px;
+  }
+
+  input[type="submit"] {
+    -webkit-appearance:button;
+    padding:5px;
+  }
 </style>
 
 <h1> New Property listing </h1>
 
-<div class="box">
-  <form action='/properties' method='POST'>
-    <label for='description'>
-      Create a new listing
-      <input type='text' name='description'>
-    </label>
-    <br>
-    <input type='submit' value='Create listing'>
-  </form>
-</div>
+<form class="box" action="/properties" method="POST" enctype="multipart/form-data">
+
+  <div>
+    <label for="address1">Enter property address:</label>
+    <input id="address1" type="text" name="address1">
+  </div>
+
+  <div>
+    <label for="price">Price per day: (£)</label>
+    <input id="price" type="number" name="price">
+  </div>
+
+  <div>
+    <label for="bedrooms">Number of bedrooms:</label>
+    <select id="bedrooms" name="bedrooms">
+      <% array =(1..10).to_a %>
+      <% array.map do |x| %>
+        <%= "<option value='#{x}'>#{x}</option>" %>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label for="description">Enter a description for the property:</label>
+    <textarea id ="description" name="description"></textarea>
+  </div>
+
+  <div>
+    <label for="file"></label>
+    <input type="file" name="file">
+  </div>
+
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>

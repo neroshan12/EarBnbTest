@@ -11,7 +11,8 @@ gem 'dm-postgres-adapter'
 gem 'pg'
 gem 'bcrypt'
 gem 'rake'
-gem 'orderly'
+gem 'carrierwave-datamapper'
+gem 'mini_magick'
 
 group :test do
   gem 'timecop'

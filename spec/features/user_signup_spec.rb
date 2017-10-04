@@ -2,7 +2,7 @@ feature 'User sign up' do
   scenario 'I can sign up as a new user' do
     expect { sign_up }.to change(User, :count).by(1)
     expect(page).to have_content('Welcome, Jack Bauer')
-    expect(User.first.email).to eq('jbauer@ctu.com')
+    expect(User.first.email).to eq('jbauer@ctu.gov')
   end
 
   scenario 'requires a matching confirmation password' do
@@ -32,23 +32,15 @@ feature 'User sign up' do
     expect(page).to have_content('Email is already taken')
   end
 
-  scenario "I can't sign up without an user name" do
+  scenario "I can't sign up without a last name" do
     expect { sign_up(last_name: nil) }.not_to change(User, :count)
     expect(current_path).to eq('/users')
-    expect(page).to have_content('User Name must not be blank')
+    expect(page).to have_content('Last name must not be blank')
   end
 
-  scenario 'I cannot sign up with an existing user name' do
-    sign_up
-    expect { sign_up }.to_not change(User, :count)
+  scenario "I can't sign up without a first name" do
+    expect { sign_up(first_name: nil) }.not_to change(User, :count)
     expect(current_path).to eq('/users')
-    expect(page).to have_content('User Name is already taken')
+    expect(page).to have_content('First name must not be blank')
   end
-
-  scenario "I can't sign up without a name" do
-    expect { sign_up(name: nil) }.not_to change(User, :count)
-    expect(current_path).to eq('/users')
-    expect(page).to have_content('Name must not be blank')
-  end
-
 end
