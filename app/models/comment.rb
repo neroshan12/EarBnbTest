@@ -1,10 +1,10 @@
 class Comment
     include DataMapper::Resource
 
-    belongs_to :user, :propertys
+    belongs_to :user, :property
 
-    comment :id,        Serial
-    comment :message    Text, required: true,
+    property :id,        Serial
+    property :message,    Text, required: true,
                         length: 1..200,
                         messages: {
                           presence: 'Comment must not be empty',

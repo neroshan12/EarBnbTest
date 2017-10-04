@@ -6,16 +6,15 @@ class EarBnb < Sinatra::Base
   end
 
   post '/property/:id/new_comment' do
-    @comment = Comment.new(message: params[:message],
+   @comment = Comment.new(message: params[:message],
                               property_id: params[:property],
-                              user_id: params[1])
+                              user_id: 1)
     if @comment.save
       current_user.save
-      redirect '/property/params[:property]'
+      redirect '/property/params["property"]'
     else
       flash.now[:errors] = @comment.errors.full_messages
-      erb :'/property/params[:property]/new_comment'
+      erb :'/property/params["property"]/new_comment'
     end
-
   end
 end
