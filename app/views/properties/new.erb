@@ -46,6 +46,7 @@
   <div>
     <label for="address1">Enter property address:</label>
     <input id="address1" type="text" name="address1">
+
   </div>
 
   <div>
@@ -58,6 +59,7 @@
     <select id="bedrooms" name="bedrooms">
       <% array =(1..10).to_a %>
       <% array.map do |x| %>
+
         <%= "<option value='#{x}'>#{x}</option>" %>
       <% end %>
     </select>
@@ -76,4 +78,5 @@
   <div>
     <input type="submit" value="Submit">
   </div>
+
 </form>
