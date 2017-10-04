@@ -6,7 +6,7 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
 
-  has n, :propertys
+  has n, :propertys, :comments
 
   property :id,         Serial
   property :email,      String, required: true,

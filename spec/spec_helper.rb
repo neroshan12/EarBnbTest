@@ -10,12 +10,12 @@ require 'rspec'
 require 'database_cleaner'
 require 'timecop'
 
-require './app/models/peep'
+require './app/models/property'
 require './app/models/user'
 require './app/app'
 require_relative 'helpers/session'
 
-Capybara.app = Chitter
+Capybara.app = EarBnb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
